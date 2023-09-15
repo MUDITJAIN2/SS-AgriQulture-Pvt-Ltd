@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_web_app/utils/colors.dart';
-//import 'package:flutter_web_app/utils/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:ss_agriqulture_pvt_ltd/util/constants.dart';
 import 'package:ss_agriqulture_pvt_ltd/pages/container2.dart';
 
-class NavBar extends StatefulWidget { // see class name
-  const NavBar({super.key});
+class NavBar extends StatefulWidget {
+  const NavBar({Key? key}) : super(key: key);
 
   @override
   State<NavBar> createState() => _NavBarState();
@@ -15,17 +13,13 @@ class NavBar extends StatefulWidget { // see class name
 class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout( 
-      //screen type layout is use for make diffrent ui for diffrent screens
-      mobile: MobileNavBar(), 
+    return ScreenTypeLayout(
+      mobile: MobileNavBar(),
       desktop: DesktopNavBar(),
-     // tablet: TabletNavBar(),
     );
   }
 
-   //=================MOBILE===============
-
-   Widget MobileNavBar(){
+  Widget MobileNavBar() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       height: 70,
@@ -33,81 +27,51 @@ class _NavBarState extends State<NavBar> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Icon(Icons.menu),
-          navLogo(),
-        ],
-      ),
-    );
-   }
-
-  //=================DESKTOP===============
-
-   Widget DesktopNavBar(){
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-       height: 70,
-      child: Row(
-       // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [  
-          navLogo(),
-          const SizedBox(width: 120,),
-          Row(
-            children: [
-              navButton('OUR GARDEN'),
-               const SizedBox(width: 20,),
-              navButton('RECEPIES'),
-              const SizedBox(width: 20,),
-              navButton('SHOP'),
-              const SizedBox(width: 20,),
-              navButton('FAQ'),
-              const SizedBox(width: 20,),
-              navButton('ABOUT US'),
-              const SizedBox(width: 20,),
-              navButton('CONTACT US'),
-            ],
+          navLogo(
+            onTap: () {
+              // Add the onPressed action for the logo here
+              // For example, you can navigate to a different screen:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Container2()),
+              );
+            },
           ),
-        /*  Container(
-            height: 45,
-            child: ElevatedButton(
-             // style:borderedButtonStyle,
-               onPressed:(){},
-              child: Text('Request a Demo',
-            //  style:TextStyle(color: AppColors.primary)
-             ),
-             ),
-          )*/
         ],
       ),
     );
-   }
+  }
 
-   Widget navButton(String text){
+  Widget DesktopNavBar() {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 4),
-      child: TextButton(onPressed: ( )
-      {
-        if (text == 'RECEPIES') {
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Padding(
+        padding: const EdgeInsets.only(right: 1125.0),
+        child: navLogo(
+          onTap: () {
+            // Add the onPressed action for the logo here
+            // For example, you can navigate to a different screen:
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Container2()),
             );
-          }
-      },
-      child: Text(text,
-      style: const TextStyle(
-        color: Colors.black,
-        fontSize: 20, 
-      ),
-      ),
+          },
+        ),
       ),
     );
-   }
-   
-   Widget navLogo(){
-    return Container(
-       width: 110,
-       decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage(logo))
+  }
+
+  Widget navLogo({VoidCallback? onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 50,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(logo),
+          ),
         ),
-     );
-   }
-} 
+      ),
+    );
+  }
+}

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-//import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:ss_agriqulture_pvt_ltd/pages/container2.dart';
+import 'package:ss_agriqulture_pvt_ltd/util/constants.dart';
+import 'package:ss_agriqulture_pvt_ltd/pages/videopage.dart';
 
 class Container1 extends StatefulWidget {
   const Container1({Key? key}) : super(key: key);
@@ -11,11 +13,10 @@ class Container1 extends StatefulWidget {
 
 class _Container1State extends State<Container1> {
   @override
-  void initState() 
-  {
+  void initState() {
     super.initState();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
@@ -23,61 +24,163 @@ class _Container1State extends State<Container1> {
       desktop: desktop1(),
     );
   }
-  
+
   Widget mobile1() {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/image/im.jpg'), // Use the correct asset path
+          image: AssetImage('assets/image/dishes/poha.jpeg'), // Use the correct asset path
           fit: BoxFit.cover,
         ),
       ),
       child: const Center(
         child: Padding(
           padding: EdgeInsets.all(20.0),
-          child: Text(
-            'GROW YOUR\nOWN INDOOR\nGARDEN',
-            style: TextStyle(
-              fontSize: 40, // Adjust the font size as needed
-              fontWeight: FontWeight.bold,
-              color: Colors.white, // Set the text color
-              height: 1.5, // Adjust the line height as needed
-            ),
-            textAlign: TextAlign.center,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'GROW YOUR',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20.0),
+              Text(
+                'OWN INDOOR',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20.0),
+              Text(
+                'GARDEN',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20.0),
+              Text(
+                'Get Started',
+                style: TextStyle(fontSize: 16),
+              ),
+            ],
           ),
         ),
       ),
-      
     );
   }
-  
+
   Widget desktop1() {
-    return Stack(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(20.0), // Adjust the value as needed
-          child: Image.network(
-            'https://cdn.autonomous.ai/static/upload/images/product/galleries/1898.2532--1643360579704.jpg', // Use the correct image URL
-            fit: BoxFit.cover,
+    return Container(
+      height: h,
+      width: w,
+      child: Row(
+        children: [
+          Column(
+            children: [
+              const SizedBox(height: 40,),
+              navButton('OUR GARDEN'),
+              const SizedBox(height: 40,),
+              navButton('WALK THROUGH'),
+              const SizedBox(height: 40,),
+              navButton('BUY NOW'),
+              const SizedBox(height: 40,),
+              navButton('FAQ'),
+              const SizedBox(height: 40,),
+              navButton('ABOUT US'),
+              const SizedBox(height: 40,),
+              navButton('CONTACT US'),
+              const SizedBox(height: 80,),
+              navButtton('⚙️'),
+            ],
           ),
-        ),
-        Container(
-          child: const Padding(
-            padding: EdgeInsets.only(left:70.0),
-            child: Text(
-              'GROW YOUR\nOWN INDOOR\nGARDEN',
-              style: TextStyle(
-                fontSize: 75, // Adjust the font size as needed
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                 // Set the text color
-                height: 1.5, // Adjust the line height as needed
+          Column(
+            children: [
+              Container(
+                child: const Padding(
+                  padding: EdgeInsets.fromLTRB(40, 0, 0, 15),
+                  child: Text(
+                    'GROW YOUR\nOWN \nINDOOR GARDEN',
+                    style: TextStyle(
+                      fontSize: 60,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      height: 1.5,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ), ]),
+              Padding(
+                padding: const EdgeInsets.only(bottom:300.0),
+                child: Container(
+                  height: 500,
+                  width:625,
+                  child: VideoPage()),
               ),
-              textAlign: TextAlign.left,
-            ),
+              
+            ],
+          ),
+    );
+  }
+
+  Widget navButton(String text) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      child: TextButton(
+        onPressed: () {
+          if (text == 'WALK THROUGH') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Container2()),
+            );
+          }
+          // Add actions for other buttons here
+        },
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 14,
           ),
         ),
-      ],
+      ),
+    );
+  }
+  Widget navButtton(String text) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      child: TextButton(
+        onPressed: () {
+          if (text == 'WALK THROUGH') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Container2()),
+            );
+          }
+          // Add actions for other buttons here
+        },
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 30,
+          ),
+        ),
+      ),
     );
   }
 }

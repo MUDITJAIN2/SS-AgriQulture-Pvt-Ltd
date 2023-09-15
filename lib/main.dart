@@ -3,7 +3,6 @@ import 'package:ss_agriqulture_pvt_ltd/home.dart';
 void main() {
   runApp( MyApp());
 }
-
 class MyApp extends StatelessWidget {
    MyApp({super.key});
   // This widget is the root of your application.
@@ -21,4 +20,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

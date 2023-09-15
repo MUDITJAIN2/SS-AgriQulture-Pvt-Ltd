@@ -18,7 +18,7 @@ class _VideoPageState extends State<VideoPage> {
       ..initialize().then((_) {
         // Ensure the first frame is shown and set state to refresh the widget.
         setState(() {});
-        _controller.play(); // Start playing the video immediately
+        _controller.pause(); // Start playing the video immediately
       });
   }
 
@@ -33,9 +33,9 @@ class _VideoPageState extends State<VideoPage> {
           ),
         ),
         Align(
-          alignment: Alignment.bottomRight,
+          alignment: Alignment.centerRight,
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(4.0),
             child: FloatingActionButton(
               onPressed: () {
                 setState(() {
@@ -48,7 +48,7 @@ class _VideoPageState extends State<VideoPage> {
                 });
               },
               child: Icon(
-                _isPlaying ? Icons.pause : Icons.play_arrow,
+                _isPlaying ? Icons.pause : Icons.play_circle_rounded,
               ),
             ),
           ),
@@ -68,7 +68,7 @@ class _VideoPageState extends State<VideoPage> {
 
   Widget _buildDesktopVideoPlayer() {
     return Padding(
-      padding: const EdgeInsets.all(40.0),
+      padding: const EdgeInsets.all(10.0),
       child: _controller.value.isInitialized
           ? AspectRatio(
               aspectRatio: _controller.value.aspectRatio,
