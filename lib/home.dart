@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ss_agriqulture_pvt_ltd/pages/Buynow.dart';
 import 'package:ss_agriqulture_pvt_ltd/pages/container1.dart';
-import 'package:ss_agriqulture_pvt_ltd/pages/videopage.dart';
+import 'package:ss_agriqulture_pvt_ltd/pages/page2.dart';
 import 'package:ss_agriqulture_pvt_ltd/widgets/navbar.dart';
 import 'package:ss_agriqulture_pvt_ltd/util/constants.dart';
 import 'package:ss_agriqulture_pvt_ltd/pages/container2.dart';
@@ -19,7 +20,7 @@ class _HomeState extends State<Home> {
         child: Container(
           child:  Column(
         // calling widgets and pages
-        children: [NavBar(),Container1(),Container2()],
+        children: [NavBar(),Container1(),Page2(),Buynow()],
        )
       ),
      )

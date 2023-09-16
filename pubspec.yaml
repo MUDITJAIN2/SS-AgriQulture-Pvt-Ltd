@@ -64,6 +64,8 @@ flutter:
       - assets/vedio/homevd.mp4
       - web/assets/poha.jpeg
       - assets/image/dishes/poha.jpeg
+      - assets/image/dishes/cocktail.jpeg
+      - assets/image/dishes/maggie.jpeg
       - assets/image/Aq_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:ss_agriqulture_pvt_ltd/pages/Buynow.dart';
 import 'package:ss_agriqulture_pvt_ltd/pages/container2.dart';
+import 'package:ss_agriqulture_pvt_ltd/pages/page2.dart';
 import 'package:ss_agriqulture_pvt_ltd/util/constants.dart';
 import 'package:ss_agriqulture_pvt_ltd/pages/videopage.dart';
 
@@ -145,7 +147,13 @@ class _Container1State extends State<Container1> {
           if (text == 'WALK THROUGH') {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Container2()),
+              MaterialPageRoute(builder: (context) => Page2()),
+            );
+          }
+          if (text == 'BUY NOW') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Buynow()),
             );
           }
           // Add actions for other buttons here
