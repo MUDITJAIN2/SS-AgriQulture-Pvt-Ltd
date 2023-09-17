@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ss_agriqulture_pvt_ltd/home.dart';
+import 'package:ss_agriqulture_pvt_ltd/pages/SplashScreen.dart';
 void main() {
   runApp( MyApp());
 }
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor:  Color.fromARGB(255, 58, 143, 183)),
         useMaterial3: true,
       ),
-      home:   Home(),
+      home:   SplashScreen(),
     );
   }
 }

@@ -181,19 +181,86 @@ class _Page2State extends State<Page2> {
             ),
             // Add any other content below the carousel
             // Example: Text('Other content goes here'),
-            Container(
-              height: 400, // Adjust the height as needed
-              color: Colors.white, // Background color for the space below carousel
-              child: Center(
-                child: Text(
-                  'Additional Content Below Carousel',
-                  style: TextStyle(fontSize: 24),
-                ),
-              ),
+           Container(
+      height: 400, // Adjust the height as needed
+      color: Colors.white, // Background color for the space below carousel
+      child: Stack(
+        children: [
+          // Step 1
+          Positioned(
+            top: 50,
+            left: 50,
+            child: _buildStep(1),
+          ),
+          // Step 2
+          Positioned(
+            top: 50,
+            right: 50,
+            child: _buildStep(3),
+          ),
+          // Step 3
+          Positioned(
+            bottom: 50,
+            left: 50,
+            child: _buildStep(2),
+          ),
+          // Step 4
+          Positioned(
+            bottom: 50,
+            right: 50,
+            child: _buildStep(4),
+          ),
+          // Arrows
+          Positioned(
+            top: 135,
+            left: 90,
+            child: Icon(
+              Icons.arrow_downward,
+              size: 30,
             ),
-          ],
+          ),
+          Positioned(
+            top: 90,
+            right: 135,
+            child: Icon(
+              Icons.arrow_forward,
+              size: 30,
+            ),
+          ),
+          Positioned(
+            bottom: 90,
+            left: 135,
+            child: Icon(
+              Icons.arrow_forward,
+              size: 30,
+            ),
+          ),
+        ],
+      ),
+    )
+          ]
+        )
+      )
+    );
+  }
+Widget _buildStep(int stepNumber) {
+    return Container(
+      width: 120,
+      height: 120,
+      decoration: BoxDecoration(
+        color: Colors.green[300],
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Center(
+        child: Text(
+          'Step $stepNumber',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+          ),
         ),
       ),
     );
   }
 }
+     

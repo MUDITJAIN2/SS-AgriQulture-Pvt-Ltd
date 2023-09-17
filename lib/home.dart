@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
         child: Container(
           child:  Column(
         // calling widgets and pages
-        children: [NavBar(),Container1(),Page2(),Buynow()],
+        children: [NavBar(),Container1(),Page2(),Buynow(),],
        )
       ),
      )

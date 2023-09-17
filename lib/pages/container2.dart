@@ -77,7 +77,8 @@ class _Container2State extends State<Container2> {
                   image: DecorationImage(
                 image: AssetImage(poha),
                 fit: BoxFit.contain,
-              )),
+              )
+              ),
           ),
         ),
       ],
