@@ -213,26 +213,54 @@ class _Page2State extends State<Page2> {
           // Arrows
           Positioned(
             top: 135,
-            left: 90,
-            child: Icon(
-              Icons.arrow_downward,
-              size: 30,
+            right: 90,
+            child: Column(
+              children: [
+                Icon(
+                  Icons.arrow_downward,
+                  size: 30,
+                ),
+                 Text("hello")
+              ],
             ),
           ),
           Positioned(
-            top: 90,
-            right: 135,
-            child: Icon(
-              Icons.arrow_forward,
-              size: 30,
+            top: 135,
+            right: 90,
+            child: Column(
+              children: [
+                Icon(
+                  Icons.arrow_downward,
+                  size: 30,
+                ),
+                 Text("hello")
+              ],
             ),
           ),
           Positioned(
-            bottom: 90,
-            left: 135,
-            child: Icon(
-              Icons.arrow_forward,
-              size: 30,
+            top: 135,
+            right: 90,
+            child: Column(
+              children: [
+                Icon(
+                  Icons.arrow_downward,
+                  size: 30,
+                ),
+                 Text("hello")
+              ],
+            ),
+          ),
+           Positioned(
+            top: 135,
+            right: 90,
+            child: Column(
+              children: [
+                Icon(
+                  Icons.arrow_downward,
+                  size: 30,
+                ),
+                 Text("hello")
+              ],
             ),
           ),
         ],
@@ -245,8 +273,8 @@ class _Page2State extends State<Page2> {
   }
 Widget _buildStep(int stepNumber) {
     return Container(
-      width: 120,
-      height: 120,
+      width: 40,
+      height: 40,
       decoration: BoxDecoration(
         color: Colors.green[300],
         borderRadius: BorderRadius.circular(10),
@@ -256,7 +284,7 @@ Widget _buildStep(int stepNumber) {
           'Step $stepNumber',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 18,
+            fontSize: 14,
           ),
         ),
       ),
