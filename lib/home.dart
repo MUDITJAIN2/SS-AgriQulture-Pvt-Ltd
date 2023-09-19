@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ss_agriqulture_pvt_ltd/pages/Buynow.dart';
+import 'package:ss_agriqulture_pvt_ltd/pages/Faq.dart';
 import 'package:ss_agriqulture_pvt_ltd/pages/container1.dart';
 import 'package:ss_agriqulture_pvt_ltd/pages/page2.dart';
 import 'package:ss_agriqulture_pvt_ltd/widgets/navbar.dart';
@@ -17,12 +18,10 @@ class _HomeState extends State<Home> {
     h = MediaQuery.of(context).size.height;
     return Scaffold(
        body: SingleChildScrollView(
-        child: Container(
-          child:  Column(
+        child: Column(
         // calling widgets and pages
-        children: [NavBar(),Container1(),Page2(),Buynow(),],
-       )
-      ),
+        children: [NavBar(),Container1(),Page2(),Buynow(),Faq()],
+       ),
      )
     );
   }
