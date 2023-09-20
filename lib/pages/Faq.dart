@@ -87,7 +87,9 @@ class FAQItem extends StatelessWidget {
             child: Text(
               answer,
               style: TextStyle(
-                fontSize: 14, // Adjusted font size for answers
+                fontSize: 14,
+                
+                 // Adjusted font size for answers
               ),
             ),
           ),
